@@ -1,6 +1,4 @@
-let form = document.querySelector(".donationForm");
-
-form.addEventListener("submit", function (event) {
+function onSubmit(event) {
   event.preventDefault();
 
   let name = document.querySelector(".charityName").value;
@@ -56,4 +54,13 @@ form.addEventListener("submit", function (event) {
     document.querySelector(".successSubmit").textContent =
       "Donation submitted!";
   }
-});
+}
+
+if (typeof window !== "undefined") {
+  const form = document.querySelector(".donationForm");
+  if (form) {
+    form.addEventListener("submit", onSubmit);
+  }
+} else {
+  module.exports = { onSubmit };
+}
