@@ -1,0 +1,26 @@
+{
+  "name": "community-support-tracker",
+  "version": "1.0.0",
+  "description": "Repository for our group final project, with team members Reese, Tuan, and Yupeng",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RForest2/Community-Support-Tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RForest2/Community-Support-Tracker/issues"
+  },
+  "homepage": "https://github.com/RForest2/Community-Support-Tracker#readme",
+  "devDependencies": {
+    "browserify": "^17.0.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "jsdom": "^21.1.2"
+  }
+}
