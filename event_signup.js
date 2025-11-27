@@ -33,7 +33,15 @@ function handleEventSignup(event) {
     event.target.reset();
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('.event-signup-form');
-    form.addEventListener('submit', handleEventSignup);
-});
+function initEventSignup() {
+    const form = document.querySelector(".event-signup-form");
+    if (form) {
+        form.addEventListener("submit", handleEventSignup);
+    }
+}
+
+if (typeof window !== "undefined") {
+    document.addEventListener("DOMContentLoaded", initEventSignup);
+} else {
+    module.exports = { isValidEmail, handleEventSignup, initEventSignup };
+}
