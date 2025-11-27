@@ -11,26 +11,15 @@ function handleEventSignup(event) {
     const repEmail = document.getElementById('repEmail').value.trim();
     const role = document.getElementById('role').value;
 
-    const formData = {
-        eventName,
-        repName,
-        repEmail,
-        role
-    };
-
     if (!eventName || !repName || !repEmail || !role) {
-        alert("Please fill out all fields.");
-        return;
+        return "Please fill out all fields.";
     }
 
     if (!isValidEmail(repEmail)) {
-        alert("Please enter a valid email address.");
-        return;
+        return "Please enter a valid email address.";
     }
 
-    console.log("Form Data:", formData);
-
-    event.target.reset();
+    return { eventName, repName, repEmail, role };
 }
 
 function initEventSignup() {
