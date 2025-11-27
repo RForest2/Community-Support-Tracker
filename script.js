@@ -13,6 +13,7 @@ form.addEventListener("submit", (event) =>{
 
     // Creating a cookie object for the form fields
     function setCookie(name, value, days){
+        module.exports = setCookie
         let expires = "2";
         if(days){
             const date = new Date();
