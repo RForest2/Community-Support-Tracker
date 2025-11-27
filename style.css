@@ -71,6 +71,40 @@ section {
   min-height: 150px;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+form input, form select {
+    padding: 8px;
+}
+
+label {
+  font-family: var(--font-header);
+}
+
+button {
+	padding: 0.625em 1.25em;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 0.3125em;
+  cursor: pointer;
+  width: auto;
+  transition: background-color 0.3s ease;
+}
+
+button:hover{
+  background-color: var(--color-secondary);
+}
+
+form button {
+  align-self: flex-start;
+}
+
+
 .footer {
   background-color: var(--color-primary);
   color: white;
