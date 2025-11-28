@@ -5,8 +5,8 @@ const { validateForm, processForm, handleSubmit } = require("./script");
 test("processForm returns correct temporary data object", () => {
     const result = processForm(
         "Innovation Event",
-        "Allan Simpson",
-        "allan@rrc.com",
+        "Alan Simpson",
+        "alan@rrc.com",
         "Volunteer"
     );
 
