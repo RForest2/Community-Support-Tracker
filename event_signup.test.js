@@ -12,8 +12,8 @@ test("processForm returns correct temporary data object", () => {
 
     expect(result).toEqual({
         eventName: "Innovation Event",
-        repName: "Allan Simpson",
-        repEmail: "allan@rrc.com",
+        repName: "Alan Simpson",
+        repEmail: "alan@rrc.com",
         role: "Volunteer"
     });
 });
