@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Support Tracker Project</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>PiXELL River Financial</h1>
+    </header>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="donation.html">Donation Tracker</a></li>
+        <li><a href="section-2.html">Volunteer Hours</a></li>
+        <li><a href="section-3.html">Event Signup</a></li>
+      </ul>
+    </nav>
+
+    <section id="section1" class="Donation-Tracker">
+      <h2>Add Donation</h2>
+
+      <form class="donationForm">
+        <label>
+          Charity Name:
+          <input type="text" class="charityName" /> </label
+        ><br />
+        <span class="error-charityName" style="display: block"></span>
+
+        <label>
+          Donation Amount:
+          <input type="number" class="donationAmount" /> </label
+        ><br />
+        <span class="error-donationAmount" style="display: block"></span>
+
+        <label>
+          Date of Donation:
+          <input type="date" class="donationDate" /> </label
+        ><br />
+        <span class="error-donationDate" style="display: block"></span>
+
+        <label>
+          Donor Comment:
+          <textarea class="donorComment"></textarea></label
+        ><br />
+        <span class="error-donorComment" style="display: block"></span>
+
+        <button type="submit" class="submitBtn">Submit</button>
+      </form>
+
+      <div class="successSubmit" style="display: block"></div>
+    </section>
+
+    <section id="section2" class="Volunteer-Hours"></section>
+    <section id="section3" class="Event-Signup"></section>
+
+    <footer class="footer">
+      <p>PiXELL River Financial</p>
+    </footer>
+
+    <script src="donation.js"></script>
+  </body>
+</html>
