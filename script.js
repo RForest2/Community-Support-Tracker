@@ -1,7 +1,7 @@
 /*
     Name:Reese Forest
     Date: Nov 22, 2025
-    About: Creating a Volunteering Hours Tracker using a HTML/JS Form
+    About: Creating a Volunteering Hours Tracker using a HTML/JS Form.
 */
 
 // Creating the Form and linking it with the HTML Element
