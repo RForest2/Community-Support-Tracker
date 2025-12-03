@@ -1,6 +1,22 @@
 // Stage-2
 let donations = [];
 
+function calculateTotal() {
+  let total = 0;
+  for (let i = 0; i < donations.length; i++) {
+    total = total + donations[i].donationAmount;
+  }
+  return total;
+}
+
+function updateSummary() {
+  let totalSpan = document.querySelector("#totalAmount");
+  if (!totalSpan) {
+    return;
+  }
+  totalSpan.textContent = calculateTotal();
+}
+
 function renderTable() {
   let table = document.querySelector("#donationTable");
   if (!table) {
@@ -34,12 +50,31 @@ function renderTable() {
 
     let deleteText = document.createElement("td");
     let deleteButton = document.createElement("button");
-    deleteButton.textContent = "Delete"; // delete feature later
+    deleteButton.textContent = "Delete";
+
+    deleteButton.dataset.index = i;
+
+    deleteButton.addEventListener("click", function () {
+      let index = Number(this.dataset.index);
+      donations.splice(index, 1);
+
+      try {
+        localStorage.setItem("donations", JSON.stringify(donations));
+        console.log("Deleted", donations);
+      } catch (error) {
+        console.error("Error with delete:", error);
+      }
+
+      renderTable();
+    });
+
     deleteText.appendChild(deleteButton);
     row.appendChild(deleteText);
 
     table.appendChild(row);
   }
+
+  updateSummary();
 }
 
 // Stage-1
@@ -124,9 +159,16 @@ if (typeof window !== "undefined") {
     console.log("Loaded donations!", donations);
   } else {
     donations = [];
-    console.error("Error with loading!", error);
+    console.log("No donations in localStorage, starting empty.");
   }
+
   renderTable();
 } else {
-  module.exports = { onSubmit, renderTable, donations };
+  module.exports = {
+    onSubmit,
+    renderTable,
+    donations,
+    calculateTotal,
+    updateSummary,
+  };
 }
