@@ -72,9 +72,7 @@ form.addEventListener("submit", (event) =>{
 
         hours.push(goodSubmission);
     }
-    }
-    
-})
+} })
 
 // Stage 2 START
 let hours = [];
