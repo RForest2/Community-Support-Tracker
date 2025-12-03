@@ -1,3 +1,48 @@
+// Stage-2
+let donations = [];
+
+function renderTable() {
+  let table = document.querySelector("#donationTable");
+  if (!table) {
+    return;
+  }
+
+  while (table.rows.length > 1) {
+    table.deleteRow(1);
+  }
+
+  for (let i = 0; i < donations.length; i++) {
+    let donation = donations[i];
+
+    let row = document.createElement("tr");
+
+    let name = document.createElement("td");
+    name.textContent = donation.charityName;
+    row.appendChild(name);
+
+    let amount = document.createElement("td");
+    amount.textContent = donation.donationAmount;
+    row.appendChild(amount);
+
+    let date = document.createElement("td");
+    date.textContent = donation.donationDate;
+    row.appendChild(date);
+
+    let comment = document.createElement("td");
+    comment.textContent = donation.donorComment;
+    row.appendChild(comment);
+
+    let deleteText = document.createElement("td");
+    let deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete"; // delete feature later
+    deleteText.appendChild(deleteButton);
+    row.appendChild(deleteText);
+
+    table.appendChild(row);
+  }
+}
+
+// Stage-1
 function onSubmit(event) {
   event.preventDefault();
 
@@ -50,6 +95,9 @@ function onSubmit(event) {
       donorComment: comment,
     };
 
+    donations.push(donation);
+    renderTable();
+
     console.log("Donation saved:", donation);
     document.querySelector(".successSubmit").textContent =
       "Donation submitted!";
@@ -62,5 +110,5 @@ if (typeof window !== "undefined") {
     form.addEventListener("submit", onSubmit);
   }
 } else {
-  module.exports = { onSubmit };
+  module.exports = { onSubmit, renderTable, donations };
 }
