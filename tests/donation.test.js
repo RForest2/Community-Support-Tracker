@@ -1,5 +1,5 @@
 const { JSDOM } = require("jsdom");
-const { onSubmit } = require("./donation");
+const { onSubmit } = require("../donation");
 
 // name empty
 test("shows error when charity name is empty", () => {
