@@ -1,6 +1,22 @@
 const { JSDOM } = require("jsdom");
 const { onSubmit } = require("../donation");
 
+global.localStorage = {
+  store: {},
+  setItem(key, value) {
+    this.store[key] = value;
+  },
+  getItem(key) {
+    return this.store[key] || null;
+  },
+  removeItem(key) {
+    delete this.store[key];
+  },
+  clear() {
+    this.store = {};
+  },
+};
+
 // name empty
 test("shows error when charity name is empty", () => {
   const dom = new JSDOM(`
