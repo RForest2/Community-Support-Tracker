@@ -96,6 +96,14 @@ function onSubmit(event) {
     };
 
     donations.push(donation);
+
+    try {
+      localStorage.setItem("donations", JSON.stringify(donations));
+      console.log("Saved donations to localStorage:", donations);
+    } catch (error) {
+      console.error("Error with saving pls check!", error);
+    }
+
     renderTable();
 
     console.log("Donation saved:", donation);
@@ -109,6 +117,16 @@ if (typeof window !== "undefined") {
   if (form) {
     form.addEventListener("submit", onSubmit);
   }
+
+  let stored = localStorage.getItem("donations");
+  if (stored !== null) {
+    donations = JSON.parse(stored);
+    console.log("Loaded donations!", donations);
+  } else {
+    donations = [];
+    console.error("Error with loading!", error);
+  }
+  renderTable();
 } else {
   module.exports = { onSubmit, renderTable, donations };
 }
