@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Support Tracker - Volunteer Hours Records</title>
+    <link rel="stylesheet" href="hours_tracker.css">
+</head>
+
+<body>
+    <header class="header">
+      <h1>PiXELL River Financial</h1>
+    </header>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="donation.html">Donation Tracker</a></li>
+        <li><a href="hours_tracker.html">Volunteer Hours</a></li>
+        <li><a href="event_signup.html">Event Signup</a></li>
+      </ul>
+    </nav>
+
+    <form id="volunteerHoursForm" action ="" method="post">
+        <div class="input-container">
+            <label for="charity-name">Charity Name:</label>
+            <input type="text" id="charity-name" name="charity-name">
+
+            <label for="hours-volunteered">Hours volunteered:</label>
+            <input type="number" class="hoursVolunteered" name="hours-volunteered" id="hours-volunteered">
+
+            <label for="date">Current Date:</label>
+            <input type="date" value="YYYY-MM-DD" name="current-date" id="current-date">
+
+        <!-- Creating the 1 to 5 rating scale -->
+            <fieldset class="rating">
+            <input type="radio" name="rating" id="1-star"/> 1 star<label for="1-star"</label>
+            <input type="radio" name="rating" id="2-star"/> 2 stars<label for="2-star"</label>
+            <input type="radio" name="rating" id="3-star"/> 3 stars<label for="3-star"</label>
+            <input type="radio" name="rating" id="4-star"/> 4 stars<label for="4-star"</label>
+            <input type="radio" name="rating" id="5-star"/> 5 stars<label for="5-star"</label>
+            </fieldset>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <!--Stage 2: Building a Table for Logged Hours -->
+    <h2>Volunteer Hours Records</h2>
+    <table id="volunteerHoursTable">
+        <tr>
+            <th>Charity Name:</th>
+            <th>Hours Volunteered:</th>
+            <th>Current Date:</th>
+            <th>Experience Rating:</th>
+            <th>Delete Log</th>
+        </tr>
+    </table>
+    <label for="">Total Hours: <span id="totalHours"></span></label>
+        <script src="bundle.js"></script>
+    </body>
+</html>
