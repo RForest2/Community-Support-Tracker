@@ -81,6 +81,10 @@ form input, form select {
     padding: 8px;
 }
 
+label {
+    font-family: var(--font-header);
+}
+
 button {
     padding: 0.625em 1.25em;
     background-color: var(--color-secondary);
